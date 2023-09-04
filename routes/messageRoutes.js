@@ -50,7 +50,7 @@ router.post('/messages/send', async (req, res) => {
       url: 'https://graph.facebook.com/v16.0/' + '114778888258379' + '/messages',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer EAAXQdCcZBoocBOzZAOlHExxndn6fUl4ezZA8zH04bwCmZAxPv6gr8Hmmms74ZC70X9eZBzr1mTXvsItBnK2hZCDZC2CiZB49KcjaS7UZBUKClScjoCzrvTJ9TPgtIZArZCML2MdeAN2O6Sf8ylx0ZCzZBSW6rDcf4zxdSXy8jHZCzfCsqX2w3vdJHlwoKHi81Ibvf5RGAgZABGTnCyDI7wI5iAlW'
+        'Authorization': 'Bearer '+ token
       },
       data: data
     };
