@@ -34,7 +34,7 @@ router.post('/messages/send', async (req, res) => {
   try{
     console.log(3);
     const token = process.env.ACCESS_TOKEN
-    console.log(token);
+    console.log(`Bearer ${token}`);
     let data = JSON.stringify({
       "messaging_product": "whatsapp",
       "to": to,
