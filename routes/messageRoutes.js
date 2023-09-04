@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 const axios= require('axios')
 const Message = require('../models/messageModel');
-const SentMessage = require('../models/sentMessageModal') // Adjust the path as needed
+const SentMessage = require('../models/sentMessageModal')
+
+require('dotenv').config();
 
 // API endpoint to get messages of a particular contact
 router.get('/messages/:contactId', async (req, res) => {
@@ -31,7 +33,7 @@ router.post('/messages/send', async (req, res) => {
   console.log(2);
   try{
     console.log(3);
-    const token = 'Bearer EAAXQdCcZBoocBOxdGaTWCfkvpN9g4ZCNPZCpgOULoZCv1vaosaldmnJWCjo6W6dlQ7x4EpKoGDfnkr5GBTgPo3vAWDPTtqwXaRZBssMC6HrBgQWvNqv9DDLzsBJ4qJoCQYCWn4fOWa5LLSW1aT0aFuCYvAGPQ9Eso9iGNNCyGWKjRtKqjaCifwx6SmDDsAmo5udGV4ZA8lPylFgiuJ'
+    const token = process.env.ACCESS_TOKEN
     let data = JSON.stringify({
       "messaging_product": "whatsapp",
       "to": to,
