@@ -50,7 +50,7 @@ router.post('/messages/send', async (req, res) => {
       url: 'https://graph.facebook.com/v16.0/' + '114778888258379' + '/messages',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer '+ token
+        'Authorization': token
       },
       data: data
     };
