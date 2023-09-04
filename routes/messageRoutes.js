@@ -34,6 +34,7 @@ router.post('/messages/send', async (req, res) => {
   try{
     console.log(3);
     const token = process.env.ACCESS_TOKEN
+    console.log(token);
     let data = JSON.stringify({
       "messaging_product": "whatsapp",
       "to": to,
@@ -50,7 +51,7 @@ router.post('/messages/send', async (req, res) => {
       url: 'https://graph.facebook.com/v16.0/' + '114778888258379' + '/messages',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': token
+        'Authorization': `Bearer ${token}`
       },
       data: data
     };
